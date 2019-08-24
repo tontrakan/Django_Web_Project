@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load static %}
+{% block page_content %}
+<h1> {{mainpage.title}} </h1>
+<div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="{% static mainpage.image %}" alt="card image cap" width="100%">
+    <div class="card-body">
+        <h5>About the menu:</h5>
+        <p>{{ mainpage.description }}</p>
+        <br>
+        <h5>Technology used:</h5>
+        <p>{{ mainpage.technology }}</p>  
+    </div>
+</div>
+{% endblock  %}

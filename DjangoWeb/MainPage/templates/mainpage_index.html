@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static %}
+{% block page_content %}
+<h1>Main Page</h1>
+<div class="card" style="width: 18rem;">
+{% for mainpage in MainPage %}
+    <img class="card-img-top" src="{% static mainpage.image %}" alt="card image cap" width="100%">
+        <div class="card-body">
+            <h5 class="card-title"> {{mainpage.title}} </h5>
+            <p class="card-text"> {{mainpage.description}} </p>
+                <a href="{% url 'mainpage_detail' mainpage.pk %}" 
+                    class="btn btn-primary">
+                        read more?                
+                </a>
+            </div>
+{% endfor %}
+</div>
+{% endblock  %}
